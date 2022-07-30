@@ -52,54 +52,77 @@ const Event = ({ children, classStyle={}, title, anchor=title, week="", date="",
 
 
     return (
-        <a href={link}>
-            <div className='p-4'>
-                <div className="bg-gray-800 rounded-md p-6">
-                    <div>
-                        <div className='flex gap-2 text-black dark:text-white font-medium'>
-                            <BsFillCalendar2EventFill className='mr-2'/>
-                            <h2 id={eventAnchor} className="font-bold hover:font-extrabold"> 
+    
+        <div className='p-4'>
+            <div className="bg-gray-800 rounded-md p-6">
+                <div>
+                    <div className='flex gap-2 text-black dark:text-white font-medium'>
+                        <BsFillCalendar2EventFill className='mr-2'/>
+                        <h2 id={eventAnchor} className="font-bold hover:font-extrabold">
+                            <a href={link}>
                                 {title}
-                            </h2>
-                        </div>
+                            </a>
+                        </h2>
                     </div>
-
-                    {week != "" &&
-                        <p className='ml-8 pb-2 pt-1'>Week: {week}</p>
-                    }
-
-                    {date != "" &&
-                        <p className='ml-8 pb-2 pt-1'>Date: {date}</p>
-                    }
-
-                    {startDate != "" && endDate != "" && 
-                        <p className='ml-8 pb-2 pt-1'>{startDate} to the {endDate}</p>
-                    }
-
-                    {startTime != "" &&
-                        <p className='ml-8 pb-2 pt-1'>Start Time: {startTime}</p>
-                    }
-                    
-                    {endTime != "" &&
-                        <p className='ml-8 pb-2 pt-1'>Finish Time: {endTime}</p>
-                    }
-
-                    {facebookURL != "" &&
-                        <p className='ml-8 pb-2 pt-1'>Facebook URL: {facebookURL}</p>
-                    }
-
-                    {discordEvent != "" &&
-                        <p className='ml-8 pb-2 pt-1'>Discord Event: {discordEvent}</p>
-                    }
-
-                    {URL != "" && URLName != "" &&
-                        <p className='ml-8 pb-2 pt-1'>{URLName} url: {URL}</p>
-                    }
-
-                    <p className="text-gray-700 dark:text-gray-300 ml-8 pt-4">{children}</p>
                 </div>
+
+                {week != "" &&
+                    <p className='ml-8 pb-2 pt-1'><strong>Week:</strong> {week}</p>
+                }
+
+                {date != "" &&
+                    <p className='ml-8 pb-2 pt-1'><strong>Date:</strong>Date: {date}</p>
+                }
+
+                {startDate != "" && endDate != "" && 
+                    <p className='ml-8 pb-2 pt-1'><strong>Dates:</strong> {startDate} to the {endDate}</p>
+                }
+
+                {startTime != "" &&
+                    <p className='ml-8 pb-2 pt-1'><strong>Start Time:</strong> {startTime}</p>
+                }
+                
+                {endTime != "" &&
+                    <p className='ml-8 pb-2 pt-1'><strong>Finish Time:</strong> {endTime}</p>
+                }
+
+                {facebookURL != "" &&
+                    <div className='flex inline'>
+                        <p className='ml-8 pb-2 pt-1'><strong>Facebook URL:</strong></p> 
+                        <p className='pt-1 ml-2 hover:underline'>
+                            <a href={facebookURL}>
+                                {facebookURL}
+                            </a>
+                        </p>
+                    </div>
+                }
+
+                {discordEvent != "" &&
+                    <div className='flex inline'>
+                        <p className='ml-8 pb-2 pt-1'><strong>Discord Event:</strong></p> 
+                        <p className='pt-1 ml-2 hover:underline'>
+                            <a href={discordEvent}>
+                                {discordEvent}
+                            </a>
+                        </p>
+                    </div>
+                }
+
+                {URL != "" && URLName != "" &&
+                    <div className='flex inline'>
+                        <p className='ml-8 pb-2 pt-1'><strong>{URLName} url:</strong></p> 
+                        <p className='pt-1 ml-2 hover:underline'>
+                            <a href={URL}>
+                            {URL}
+                            </a>
+                        </p>
+                    </div>
+                }
+
+                <p className="text-gray-700 dark:text-gray-300 ml-8 pt-4">{children}</p>
             </div>
-        </a>
+        </div>
+    
     );
 };
 
@@ -121,7 +144,7 @@ export default function Timeline() {
 
             <Month>July</Month>
             <Week>Week 1</Week>
-            <Event title="CSSA Hackathon" anchor="cssa-hackathon" startDate="30th" endDate="1st" startTime="9am" endTime="11:59pm">
+            <Event title="CSSA Hackathon" anchor="cssa-hackathon" startDate="30th" endDate="1st" startTime="9am" endTime="11:59pm" discordEvent='https://discord.gg/qFBWNtHNa6?event=1000033510557503578'>
                 event description here
             
             </Event>
