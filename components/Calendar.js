@@ -1,5 +1,15 @@
 import { useState } from 'react';
 import { BsFillCalendar2EventFill } from "react-icons/bs";
+import kebabCase from "../lib/utils/kebabCase";
+
+function getAnchor(text) {
+    return text
+        .toString()
+        .toLowerCase()
+        .replace(/[^a-z0-9 ]/g, '')
+        .replace(/[ ]/g, '-')
+        .slice(13)
+}
 
 const Divider = () => {
     return (
@@ -7,18 +17,12 @@ const Divider = () => {
     );
 };
 
-const Year = ({ children, anchor }) => {
-    return (
-        <h3 id={anchor} className="text-lg md:text-xl font-bold mb-4 tracking-tight text-gray-900 dark:text-gray-100">
-        {children}
-        </h3>
-    );
-};
-
-const Month = ({ children, anchor }) => {
+const Month = ({ children }) => {
+    const anchor = kebabCase(children)
     const link = `#${anchor}`
+    console.log(typeof(kebabCase(children)))
     return (
-        <h3 id={anchor} className="text-lg md:text-xl font-bold mb-4 tracking-tight text-gray-900 dark:text-gray-100">
+        <h3 id={anchor} className="text-3xl font-bold my-4 text-gray-900 dark:text-gray-100 hover:underline hover:font-extrabold">
             <a href={link}>
                 {children}
             </a>
@@ -26,21 +30,76 @@ const Month = ({ children, anchor }) => {
     );
 };
 
-const Event = (props) => {
+const Week = ({ children }) => {
+    const anchor = kebabCase(children)
+    const link = `#${anchor}`
+    console.log(typeof(kebabCase(children)))
     return (
-        <li className="mb-6 ml-2">
-        <div className={props.classStyle}>
-            <span className="sr-only">Check</span>
-            <BsFillCalendar2EventFill className='mr-2'/>
-            <div className='flex gap-2 text-black dark:text-white font-medium'>
-                <h2 id={props.anchor}>
-                    {props.title}
-                </h2>
+        <h3 id={anchor} className="text-2xl font-bold my-4 text-gray-900 dark:text-gray-100 hover:underline hover:font-extrabold">
+            <a href={link}>
+                {children}
+            </a>
+        </h3>
+    );
+};
+
+const Event = ({ children, classStyle={}, title, anchor=title, week="", date="", startDate="", endDate="", startTime="", endTime="", facebookURL="", discordEvent="", URL="", URLName=""}) => {
+
+    let eventAnchor = kebabCase(anchor)
+    const link = `#${eventAnchor}`
+    console.log("eventAnchor: " + {eventAnchor})
+
+
+
+    return (
+        <a href={link}>
+            <div className='p-4'>
+                <div className="bg-gray-800 rounded-md p-6">
+                    <div>
+                        <div className='flex gap-2 text-black dark:text-white font-medium'>
+                            <BsFillCalendar2EventFill className='mr-2'/>
+                            <h2 id={eventAnchor} className="font-bold hover:font-extrabold"> 
+                                {title}
+                            </h2>
+                        </div>
+                    </div>
+
+                    {week != "" &&
+                        <p className='ml-8 pb-2 pt-1'>Week: {week}</p>
+                    }
+
+                    {date != "" &&
+                        <p className='ml-8 pb-2 pt-1'>Date: {date}</p>
+                    }
+
+                    {startDate != "" && endDate != "" && 
+                        <p className='ml-8 pb-2 pt-1'>{startDate} to the {endDate}</p>
+                    }
+
+                    {startTime != "" &&
+                        <p className='ml-8 pb-2 pt-1'>Start Time: {startTime}</p>
+                    }
+                    
+                    {endTime != "" &&
+                        <p className='ml-8 pb-2 pt-1'>Finish Time: {endTime}</p>
+                    }
+
+                    {facebookURL != "" &&
+                        <p className='ml-8 pb-2 pt-1'>Facebook URL: {facebookURL}</p>
+                    }
+
+                    {discordEvent != "" &&
+                        <p className='ml-8 pb-2 pt-1'>Discord Event: {discordEvent}</p>
+                    }
+
+                    {URL != "" && URLName != "" &&
+                        <p className='ml-8 pb-2 pt-1'>{URLName} url: {URL}</p>
+                    }
+
+                    <p className="text-gray-700 dark:text-gray-300 ml-8 pt-4">{children}</p>
+                </div>
             </div>
-        </div>
-        <p className='ml-6 pb-2 pt-1'>{props.month}</p>
-        <p className="text-gray-700 dark:text-gray-300 ml-6">{props.children}</p>
-        </li>
+        </a>
     );
 };
 
@@ -56,14 +115,27 @@ export default function Timeline() {
 
     return (
         <div className='container mx-auto'>
-            <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
+            <h3 className="font-bold text-4xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white pb-5">
                 Upcoming 2022 Events
             </h3>
-            <Year anchor={2022}>2022</Year>
 
-            <Month anchor={"July"}>July</Month>
+            <Month>July</Month>
+            <Week>Week 1</Week>
+            <Event title="CSSA Hackathon" anchor="cssa-hackathon" startDate="30th" endDate="1st" startTime="9am" endTime="11:59pm">
+                event description here
             
-            {isShowingFullTimeline ? (
+            </Event>
+
+            <Week>Week 2</Week>
+            <Event title="ESA Skykraft Manufacturing Facility Tour" anchor="skykraft-tour" startDate="30th" endDate="1st" startTime="9am" endTime="11:59pm">
+                event description here
+            
+            </Event>
+
+
+            <Month anchor={"august"}>August</Month>
+
+            {/* {isShowingFullTimeline ? (
                 <FullTimeline />
             ) : (
                 <button
@@ -87,7 +159,7 @@ export default function Timeline() {
                     />
                 </svg>
                 </button>
-            )}
+            )} */}
         </div>
     );
 }

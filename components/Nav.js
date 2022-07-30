@@ -35,7 +35,7 @@ const Nav = () => {
     return (
         <div className="flex flex-col max-w-2xl mx-auto pb-6">
             <div className="flex mx-auto columns-3">
-                <NavItem href="/" text="Home" icon={<RiHome4Fill/> } />
+                <NavItem href="/" text="Home" icon={<RiHome4Fill/> } ></NavItem>
                 <NavItem href="/" text="List View" icon={<RiHome4Fill/> } />
                 <NavItem href="/" text="Calendar View" icon={<RiHome4Fill/> } />
             </div>
