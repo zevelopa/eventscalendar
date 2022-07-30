@@ -8,7 +8,7 @@ export default function Home() {
         <div className="flex flex-col sm:flex-row items-start">
           <div className="flex flex-col">
             <h1 className="font-bold content-center text-3xl md:text-5xl mb-1 text-black dark:text-white">
-              CSSA
+              CSSA Events Calendar
             </h1>
             <h2 className="text-gray-700 dark:text-gray-200 mb-4">
               Developer, CompSci and CyberSec student
