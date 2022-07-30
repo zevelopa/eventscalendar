@@ -19,12 +19,34 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
   body {
     color: white;
     background: black;
   }
+}
+
+.anchor-link {
+  @apply invisible absolute;
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor-link:hover {
+  @apply visible no-underline;
+}
+
+.anchor-link:after {
+  @apply text-gray-300 dark:text-gray-700;
+  content: '#';
+}
+
+*:hover > .anchor-link {
+  @apply visible no-underline;
 }

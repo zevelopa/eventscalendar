@@ -16,9 +16,12 @@ const Year = ({ children, anchor }) => {
 };
 
 const Month = ({ children, anchor }) => {
+    const link = `#${anchor}`
     return (
         <h3 id={anchor} className="text-lg md:text-xl font-bold mb-4 tracking-tight text-gray-900 dark:text-gray-100">
-        {children}
+            <a href={link}>
+                {children}
+            </a>
         </h3>
     );
 };
@@ -57,6 +60,8 @@ export default function Timeline() {
                 Upcoming 2022 Events
             </h3>
             <Year anchor={2022}>2022</Year>
+
+            <Month anchor={"July"}>July</Month>
             
             {isShowingFullTimeline ? (
                 <FullTimeline />
