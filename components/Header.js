@@ -9,6 +9,12 @@ const Header = () => {
                 <h2 className="text-gray-700 dark:text-gray-200 mb-4 text-xl">
                 Events calendar for upcoming CSSA events and details.
                 </h2>
+
+                <div className="flex mx-auto columns-3">
+                    <p className="p-4">test</p>
+                    <p className="p-4">test</p>
+                    <p className="p-4">test</p>
+                </div>
             </div>
         // </div>
         

@@ -52,37 +52,37 @@ export default function Timeline() {
     const [isShowingFullTimeline, showFullTimeline] = useState(false);
 
     return (
-        <>
-        <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
-            Upcoming Events
-        </h3>
-        <Year anchor={2022}>2022</Year>
-        
-        {isShowingFullTimeline ? (
-            <FullTimeline />
-        ) : (
-            <button
-            type="button"
-            className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-bold text-gray-900 dark:text-gray-100"
-            onClick={() => showFullTimeline(true)}
-            >
-            See More
-            <svg
-                className="h-4 w-4 ml-1"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-            >
-                <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 9l-7 7-7-7"
-                />
-            </svg>
-            </button>
-        )}
-        </>
+        <div className='container mx-auto'>
+            <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
+                Upcoming 2022 Events
+            </h3>
+            <Year anchor={2022}>2022</Year>
+            
+            {isShowingFullTimeline ? (
+                <FullTimeline />
+            ) : (
+                <button
+                type="button"
+                className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-bold text-gray-900 dark:text-gray-100"
+                onClick={() => showFullTimeline(true)}
+                >
+                See More
+                <svg
+                    className="h-4 w-4 ml-1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                >
+                    <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                    />
+                </svg>
+                </button>
+            )}
+        </div>
     );
 }
