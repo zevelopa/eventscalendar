@@ -1,3 +1,10 @@
+import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
+import cn from 'classnames';
+import { RiHome4Fill } from "react-icons/ri";
+
 function NavItem({ href, text, icon }) {
     const router = useRouter();
     const isActive = router.asPath === href;
@@ -26,19 +33,11 @@ function NavItem({ href, text, icon }) {
 
 const Nav = () => {
     return (
-        <div className="pt-10 flex flex-col max-w-2xl mx-auto pb-16">
-            <h1 className="font-bold content-center text-3xl md:text-5xl mb-1 text-black dark:text-white">
-            CSSA Events Calendar
-            </h1>
-
-            <h2 className="text-gray-700 dark:text-gray-200 mb-4 text-xl">
-            Events calendar for upcoming CSSA events and details.
-            </h2>
-
+        <div className="flex flex-col max-w-2xl mx-auto pb-6">
             <div className="flex mx-auto columns-3">
-                <p className="p-4">test</p>
-                <p className="p-4">test</p>
-                <p className="p-4">test</p>
+                <NavItem href="/" text="Home" icon={<RiHome4Fill/> } />
+                <NavItem href="/" text="List View" icon={<RiHome4Fill/> } />
+                <NavItem href="/" text="Calendar View" icon={<RiHome4Fill/> } />
             </div>
         </div>
     )
