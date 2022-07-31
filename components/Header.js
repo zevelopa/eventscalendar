@@ -13,7 +13,7 @@ const Header = () => {
                 </h2>
 
             </div>
-            <Nav/>
+            {/* <Nav/> */}
         </div>
     )
 }
