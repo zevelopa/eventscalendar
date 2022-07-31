@@ -187,8 +187,7 @@ export default function Timeline() {
             <Month>August</Month>
             <Week>Week 2</Week>
             <Event title="ESA Skykraft Manufacturing Facility Tour" anchor="skykraft-tour" date="4th of August" startTime="10:30am" endTime="12:00pm" URL='https://forms.gle/tRTESDWJLpjohBbD6' URLName='EOI Form' shortDescription="Come along to see the ins and outs of the design & manufacturing process, and find out about their summer internship opportunities!" location="SkyKraft Constitution Avenue Office">
-                Skykraft is an Australian Space Services start-up company that is set to launch Australia's largest spacecraft with SpaceX in October this year. It seems there may be an opportunity for Engineering and Computer Science students to tour the skyrkaft facility (located on Constitution Avenue - not too far from ANU). They are on the lookout for potential students over the summer willing to do mechanical, electrical or computing internships. Would you be interested in partnering for this event?
-            
+            Skykraft is an Australian Space Services start-up company that is set to launch Australia&apos;s largest spacecraft with SpaceX in October this year. It seems there may be an opportunity for Engineering and Computer Science students to tour the skyrkaft facility (located on Constitution Avenue - not too far from ANU). They are on the lookout for potential students over the summer willing to do mechanical, electrical or computing internships. Would you be interested in partnering for this
             </Event>
 
             <Week>Week 3</Week>
@@ -199,7 +198,7 @@ export default function Timeline() {
             Please join us for an afternoon of speed networking for jobs with some of the coolest startups, innovative companies and public sector agencies in Canberra.
             <br/>
             <br/>
-            If you are a student studying a STEM related degree than this is the event for you! You're in demand! It doesn't matter what you are studying, businesses look for the students who are the right  'cultural fit' and have a passion and interest in the organisation.
+            If you are a student studying a STEM related degree than this is the event for you! You&apos;re in demand! It doesn&apos;t matter what you are studying, businesses look for the students who are the right  &apos;cultural fit&apos; and have a passion and interest in the organisation.
             <br/>
             <br/>
             Click on the links below to visit the Facebook events
@@ -224,7 +223,7 @@ export default function Timeline() {
                 There is a common misconception that to have a job in the tech industry, you must have technical skills or a computing degree. Well, this in fact is not true. AFEC, CSSA and CAPSS society present, “Emerging Tech in the Asia Pacific” hosted by Deloitte Digital and joined by Accenture and EY.
                 <br/>
                 <br/>
-                This will be a panel-style event where each guest speaker will introduce their firms and talk about their experiences in the tech industry and how you can get a break into the industry even if you don't graduate with a STEM degree. This will then break into a Q&A session for the remainder of the hour before ending the panel session, allowing attendees to talk to the panel guests one on one if they are interested in enjoying some light refreshments.
+                This will be a panel-style event where each guest speaker will introduce their firms and talk about their experiences in the tech industry and how you can get a break into the industry even if you don&apos;t graduate with a STEM degree. This will then break into a Q&A session for the remainder of the hour before ending the panel session, allowing attendees to talk to the panel guests one on one if they are interested in enjoying some light refreshments.
 
             </Event>
 
@@ -248,7 +247,7 @@ export default function Timeline() {
             <Month>October</Month>
             <Week>Week 10</Week>
             <Event title="Arcitecta Talk" anchor="arcitecta-talk" date="13th of October" startTime="5:00pm" endTime="7:00pm" shortDescription="Come along to a presentation on Arcitecta's vison of data management in preparation for and/or when we reach yottabyte, xenottabyte scales and beyond. Arcitecta also handles petabytes of data for the ANU" location="Birch Building (#35), Innovation Space (Level 2)">
-                Come meet Jason Lohrey, our CTO and Founder, who would love to present to the CSSA and ESA cohorts. He will discuss Arcitecta's vision of data management in preparation for and/or when we reach yottabyte, xenottabyte scales and beyond. 
+                Come meet Jason Lohrey, our CTO and Founder, who would love to present to the CSSA and ESA cohorts. He will discuss Arcitecta&apos;s vision of data management in preparation for and/or when we reach yottabyte, xenottabyte scales and beyond. 
                 <br/>
                 <br/>
                 Arcitecta works with the ANU to handle data in the petabyte scales which is growing rapidly. Andrew Howard from NCI/ANU would be there to give his insights. With the enthusiasm and big thinking between the two of them, attendees will be on the edge of their seats.
