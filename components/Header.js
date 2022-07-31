@@ -2,7 +2,7 @@ import Nav from "../components/Nav"
 
 const Header = () => {
     return (
-        // <div className="grid grid-cols-2">
+        <div className="mx-auto">
             <div className="pt-10 flex flex-col max-w-2xl mx-auto">
                 <h1 className="font-bold content-center text-3xl md:text-5xl mb-1 text-black dark:text-white">
                 CSSA Events Calendar
@@ -13,8 +13,8 @@ const Header = () => {
                 </h2>
 
             </div>
-        // </div>
-        
+            <Nav/>
+        </div>
     )
 }
 
