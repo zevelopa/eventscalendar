@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { IoMdArrowRoundDown, IoMdArrowRoundUp } from "react-icons/io";
 import kebabCase from "../lib/utils/kebabCase";
+import Image from 'next/image';
 
 const Divider = () => {
     return (
@@ -33,21 +34,9 @@ const Week = ({ children }) => {
 };
 
 
-const Event = ({ children, classStyle={}, title, anchor=title, week="", date="", startDate="", endDate="", startTime="", endTime="", facebookURL="", discordEvent="", URL="", URLName=""}) => {
+const Event = ({ children, shortDescription="", classStyle={}, title, anchor=title, week="", date="", startDate="", endDate="", startTime="", endTime="", facebookURL="", discordEvent="", URL="", URLName="", Image="", ImageAlt="", ImageWidth="200", ImageHeight="200"}) => {
 
     const [isShowingMore, showMore] = useState(false);
-
-    const handleShow = ()=>{
-        setState({
-            isActive: true})
-    }
-    
-    const handleHide = () =>{
-        setState({
-            isActive: false})
-    }
-
-
 
     let eventAnchor = kebabCase(anchor)
     const link = `#${eventAnchor}`
@@ -87,10 +76,13 @@ const Event = ({ children, classStyle={}, title, anchor=title, week="", date="",
                     <p className='pb-2 pt-1'><strong>Finish Time:</strong> {endTime}</p>
                 }
 
-                <p className="text-gray-700 dark:text-gray-300 pt-4">{children}</p>
+                {shortDescription != "" && !isShowingMore &&
+                    <p className="text-gray-700 dark:text-gray-300 py-4">{shortDescription}</p>
+                }
 
                 {isShowingMore ? (
                         <div>
+
                             {facebookURL != "" &&
                                 <div className='flex'>
                                     <p className='pb-2 pt-1'><strong>Facebook URL:</strong></p> 
@@ -124,6 +116,13 @@ const Event = ({ children, classStyle={}, title, anchor=title, week="", date="",
                                 </div>
                             }
 
+                            {/* {Image !="" &&
+                                // <Image src={Image}/> 
+                                <Image src="/public/images/hackathon2-modifiedtext.png"/> 
+                            } */}
+
+                            <p className="text-gray-700 dark:text-gray-300 py-4">{children}</p>
+
                             <button
                             type="button"
                             className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-bold text-gray-900 dark:text-gray-100"
@@ -136,7 +135,7 @@ const Event = ({ children, classStyle={}, title, anchor=title, week="", date="",
                     ) : (
                         <button
                         type="button"
-                        className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-bold text-gray-900 dark:text-gray-100"
+                        className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-bold  text-gray-900 dark:text-gray-100"
                         onClick={() => showMore(true)}
                         >
                         See More
@@ -168,7 +167,7 @@ export default function Timeline() {
 
             <Month>July</Month>
             <Week>Week 1</Week>
-            <Event title="CSSA Hackathon" anchor="cssa-hackathon" startDate="30th" endDate="1st" startTime="9am" endTime="11:59pm" discordEvent='https://discord.gg/qFBWNtHNa6?event=1000033510557503578'>
+            <Event title="CSSA Hackathon" anchor="cssa-hackathon" startDate="30th" endDate="1st" startTime="9am" endTime="11:59pm" discordEvent='https://discord.gg/qFBWNtHNa6?event=1000033510557503578' shortDescription='Tejkfsdj;fsj;fsdj;kfsdk;jst'>
                 event description here event description here event description here event description here event description here event description event description hereevent description herehere
             
             </Event>
@@ -182,31 +181,7 @@ export default function Timeline() {
 
             <Month anchor={"august"}>August</Month>
 
-            {/* {isShowingFullTimeline ? (
-                <FullTimeline />
-            ) : (
-                <button
-                type="button"
-                className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-bold text-gray-900 dark:text-gray-100"
-                onClick={() => showFullTimeline(true)}
-                >
-                See More
-                <svg
-                    className="h-4 w-4 ml-1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                >
-                    <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                    />
-                </svg>
-                </button>
-            )} */}
+
         </div>
     );
 }
