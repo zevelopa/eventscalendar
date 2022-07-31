@@ -2,15 +2,6 @@ import { useState } from 'react';
 import { BsFillCalendar2EventFill } from "react-icons/bs";
 import kebabCase from "../lib/utils/kebabCase";
 
-function getAnchor(text) {
-    return text
-        .toString()
-        .toLowerCase()
-        .replace(/[^a-z0-9 ]/g, '')
-        .replace(/[ ]/g, '-')
-        .slice(13)
-}
-
 const Divider = () => {
     return (
         <div className="border border-gray-200 dark:border-gray-800 w-full my-8" />
@@ -20,7 +11,6 @@ const Divider = () => {
 const Month = ({ children }) => {
     const anchor = kebabCase(children)
     const link = `#${anchor}`
-    console.log(typeof(kebabCase(children)))
     return (
         <h3 id={anchor} className="text-3xl font-bold my-4 text-gray-900 dark:text-gray-100 hover:underline hover:font-extrabold">
             <a href={link}>
@@ -33,7 +23,6 @@ const Month = ({ children }) => {
 const Week = ({ children }) => {
     const anchor = kebabCase(children)
     const link = `#${anchor}`
-    console.log(typeof(kebabCase(children)))
     return (
         <h3 id={anchor} className="text-2xl font-bold my-4 text-gray-900 dark:text-gray-100 hover:underline hover:font-extrabold">
             <a href={link}>
@@ -87,7 +76,7 @@ const Event = ({ children, classStyle={}, title, anchor=title, week="", date="",
                 }
 
                 {facebookURL != "" &&
-                    <div className='flex inline'>
+                    <div className='flex'>
                         <p className='ml-8 pb-2 pt-1'><strong>Facebook URL:</strong></p> 
                         <p className='pt-1 ml-2 hover:underline'>
                             <a href={facebookURL}>
@@ -98,7 +87,7 @@ const Event = ({ children, classStyle={}, title, anchor=title, week="", date="",
                 }
 
                 {discordEvent != "" &&
-                    <div className='flex inline'>
+                    <div className='flex'>
                         <p className='ml-8 pb-2 pt-1'><strong>Discord Event:</strong></p> 
                         <p className='pt-1 ml-2 hover:underline'>
                             <a href={discordEvent}>
@@ -109,7 +98,7 @@ const Event = ({ children, classStyle={}, title, anchor=title, week="", date="",
                 }
 
                 {URL != "" && URLName != "" &&
-                    <div className='flex inline'>
+                    <div className='flex'>
                         <p className='ml-8 pb-2 pt-1'><strong>{URLName} url:</strong></p> 
                         <p className='pt-1 ml-2 hover:underline'>
                             <a href={URL}>
