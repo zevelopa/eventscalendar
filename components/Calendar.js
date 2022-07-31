@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { IoMdArrowRoundDown, IoMdArrowRoundUp } from "react-icons/io";
 import kebabCase from "../lib/utils/kebabCase";
 import Image from 'next/image';
+import ShowImage from './ShowImage';
 
 const Divider = () => {
     return (
@@ -116,12 +117,19 @@ const Event = ({ children, shortDescription="", classStyle={}, title, anchor=tit
                                 </div>
                             }
 
-                            {/* {Image !="" &&
+                            {Image !="" &&
                                 // <Image src={Image}/> 
-                                <Image src="/public/images/hackathon2-modifiedtext.png"/> 
-                            } */}
+                                <Image 
+                                    src={Image}
+                                    alt={ImageAlt}
+                                    width={ImageWidth}
+                                    height={ImageHeight}
+                                    placeholder="blur"/> 
+                            }
 
-                            <p className="text-gray-700 dark:text-gray-300 py-4">{children}</p>
+                            <ShowImage src="/images/hackathon2-modifiedtext.png"></ShowImage>
+
+                            {/* <p className="text-gray-700 dark:text-gray-300 py-4">{children}</p> */}
 
                             <button
                             type="button"
@@ -167,7 +175,7 @@ export default function Timeline() {
 
             <Month>July</Month>
             <Week>Week 1</Week>
-            <Event title="CSSA Hackathon" anchor="cssa-hackathon" startDate="30th" endDate="1st" startTime="9am" endTime="11:59pm" discordEvent='https://discord.gg/qFBWNtHNa6?event=1000033510557503578' shortDescription='Tejkfsdj;fsj;fsdj;kfsdk;jst'>
+            <Event title="CSSA Hackathon" anchor="cssa-hackathon" startDate="30th" endDate="1st" startTime="9am" endTime="11:59pm" discordEvent='https://discord.gg/qFBWNtHNa6?event=1000033510557503578' shortDescription='Tejkfsdj;fsj;fsdj;kfsdk;jst' image="/images/hackathon2-modifiedtext.png">
                 event description here event description here event description here event description here event description here event description event description hereevent description herehere
             
             </Event>

@@ -1,12 +1,12 @@
 import Image from 'next/image'
-import logo from '../public/logo.svg';
 
-const ShowImage = () => {
-  return (
-    <>
-      <Image src="/images/hackathon2-modifiedtext.png" layout="fill"/>   
-    </>
-  )
+const ShowImage = (imgSrc) => {
+    return (
+        <div>
+            {/* <Image src={imgSrc} layout="fill"/>    */}
+            <Image src={imgSrc} layout="responsive"/>   
+        </div>
+    )
 }
 
 export default ShowImage
