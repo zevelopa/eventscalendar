@@ -7,6 +7,7 @@ Currently supports various formats of links, date and time formats.
 
 Linking to a month, week or specific events is also possible for easy event sharing.
 
+**Demo URL:** [website](https://cssaeventscalendar.matthewchen.dev/)
 
 # Future features if rolled out
 * Image support
