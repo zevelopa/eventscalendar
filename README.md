@@ -1,5 +1,5 @@
 # eventscalendar
-Events calendar for CSSA events
+Events calendar for CSSA events made during the [CSSA 2022 Hackathon](https://github.com/anucssa/hackathon-submissions-2022)
 
 Events can be added in the **Calendar** component located in **/components**.
 
